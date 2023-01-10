@@ -9,6 +9,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -20,9 +21,10 @@ section {
   width: 100%;
   padding: 12rem 0;
   overflow: hidden;
+  background-color: #FFF;
 }
 
-main section#services .container #services-content #services-cards .service .service-text p, main section#about .container #about-content ul li p, main section#services .container #services-content #services-title p, main section#about .container #about-title p {
+footer #footer-copyright .container #copyright-responsive span, footer #footer-copyright .container p, footer #footer-content .container #footer-contact a p, footer #footer-content .container #footer-about p, main section#services .container #services-content #services-cards .service .service-text p, main section#about .container #about-content ul li p, main section#home .container #home-content p, header #header-content .container #header-menu nav ul li a, header #header-contact .container ul li a, header #header-contact .container ul li p, main section#services .container #services-content #services-title p, main section#about .container #about-title p {
   font-size: 1.6rem;
   font-weight: 400;
   color: #00235A;
@@ -74,11 +76,177 @@ main section#services .container #services-content #services-title p, main secti
   max-width: 50rem;
 }
 
+footer #footer-content .container #footer-about a, main section#services .container #services-content #services-cards a, main section#home .container #home-content a {
+  display: inline-block;
+  margin-top: 3rem;
+  background-color: #FF5E14;
+  border-radius: 2rem 0 2rem 0;
+  padding: 1.75rem 5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #FFF;
+  border: 0.25rem solid #FF5E14;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+footer #footer-content .container #footer-about a.secondary, main section#services .container #services-content #services-cards a.secondary, main section#home .container #home-content a.secondary {
+  background-color: transparent;
+  border-color: #FFF;
+}
+footer #footer-content .container #footer-about a.secondary:hover, main section#services .container #services-content #services-cards a.secondary:hover, main section#home .container #home-content a.secondary:hover {
+  background-color: #FF5E14;
+  border-color: #FF5E14;
+}
+footer #footer-content .container #footer-about a:hover, main section#services .container #services-content #services-cards a:hover, main section#home .container #home-content a:hover {
+  background-color: transparent;
+}
+
+body::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(../img/home-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
 /*#region Header Codes*/
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.13);
+}
+header #header-contact {
+  width: 100%;
+  background-color: #DDD;
+}
+header #header-contact .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.75rem 0;
+}
+header #header-contact .container ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header #header-contact .container ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 2.5rem;
+}
+header #header-contact .container ul li:last-child {
+  margin-right: 0;
+}
+header #header-contact .container ul li i {
+  font-size: 2rem;
+  color: #00235A;
+  margin-right: 1rem;
+}
+header #header-contact .container ul li p {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-right: 0.5rem;
+}
+header #header-contact .container ul li a {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+header #header-content {
+  position: relative;
+  width: 100%;
+  background-color: #00235A;
+  border-top: 0.4rem solid #FF5E14;
+}
+header #header-content #header-logo {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  width: 35rem;
+  height: calc(100% + 3rem);
+  background-image: url(../img/logo-bg.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header #header-content .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.75rem 0;
+}
+header #header-content .container #header-menu nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header #header-content .container #header-menu nav ul li {
+  margin: 0 1.25rem;
+}
+header #header-content .container #header-menu nav ul li:last-child {
+  margin-right: 0;
+}
+header #header-content .container #header-menu nav ul li a {
+  color: #FFF;
+  transition: color 0.3s ease;
+}
+header #header-content .container #header-menu nav ul li a:hover {
+  color: #FF5E14;
+}
+
 /*#endregion*/
 /*#region Main Codes*/
+main section#home {
+  position: relative;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+main section#home .container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6rem;
+}
+main section#home .container #home-content {
+  width: 50%;
+}
+main section#home .container #home-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background-image: url(../img/home-overlay.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+main section#home .container #home-content h1 {
+  font-size: 7rem;
+  font-weight: 900;
+  color: #FFF;
+  margin-bottom: 1.25rem;
+}
+main section#home .container #home-content p {
+  color: #FFF;
+}
 main section#about {
-  margin-bottom: 9rem;
+  padding-bottom: 21rem;
 }
 main section#about .container #about-content {
   width: 100%;
@@ -162,21 +330,6 @@ main section#services .container #services-content #services-cards .service .ser
   max-width: 35rem;
   color: #FFF;
 }
-main section#services .container #services-content #services-cards a {
-  display: inline-block;
-  margin-top: 3rem;
-  background-color: #FF5E14;
-  padding: 2rem 5.5rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #FFF;
-  border: 0.25rem solid #FF5E14;
-  transition: background-color 0.3s ease;
-  z-index: 2;
-}
-main section#services .container #services-content #services-cards a:hover {
-  background-color: transparent;
-}
 main section#partners {
   padding: 0;
   background-color: #FF5E14;
@@ -209,6 +362,77 @@ main section#partners .container #partners-content ul li img {
 
 /*#endregion*/
 /*#region Footer Codes*/
+footer {
+  width: 100%;
+  background-color: #001940;
+}
+footer #footer-content {
+  width: 100%;
+  padding: 12rem 0;
+}
+footer #footer-content .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer #footer-content .container h6 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFF;
+  margin-bottom: 3rem;
+}
+footer #footer-content .container #footer-about {
+  width: 30%;
+  padding-right: 10%;
+}
+footer #footer-content .container #footer-about p {
+  color: #FFF;
+  margin-bottom: 2.5rem;
+}
+footer #footer-content .container #footer-contact {
+  width: 35%;
+  padding-right: 7.5%;
+}
+footer #footer-content .container #footer-contact a p {
+  color: #FFF;
+}
+footer #footer-content .container #footer-project {
+  width: 35%;
+}
+footer #footer-content .container #footer-project img {
+  max-width: 25rem;
+  width: 100%;
+}
+footer #footer-copyright {
+  width: 100%;
+  padding: 1.75rem 0;
+  background-color: #00122F;
+}
+footer #footer-copyright .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer #footer-copyright .container p {
+  font-size: 1.35rem;
+  color: #FFF;
+}
+footer #footer-copyright .container #copyright-responsive {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer #footer-copyright .container #copyright-responsive span {
+  color: #FFF;
+  display: inline-block;
+  margin-right: 2.5rem;
+  font-size: 1.35rem;
+}
+footer #footer-copyright .container #copyright-responsive i {
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
 /*#endregion*/
 /*#region Responsive Codes*/
 /*#endregion*//*# sourceMappingURL=style.css.map */

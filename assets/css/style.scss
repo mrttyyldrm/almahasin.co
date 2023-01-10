@@ -14,6 +14,7 @@ $gray: #DDD;
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -25,6 +26,7 @@ section {
     width: 100%;
     padding: 12rem 0;
     overflow: hidden;
+    background-color: $white;
 }
 
 %text {
@@ -85,9 +87,161 @@ section {
     }
 }
 
+%button{
+    display: inline-block;
+    margin-top: 3rem;
+    background-color: $secondary;
+    border-radius: 2rem 0 2rem 0;
+    padding: 1.75rem 5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $white;
+    border: 0.25rem solid $secondary;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+
+    &.secondary{
+        background-color: transparent;
+        border-color: $white;
+
+        &:hover{
+            background-color: $secondary;
+            border-color: $secondary;
+        }
+    }
+
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+body{
+    &::before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: -1;
+        background-image: url(../img/home-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+    }
+}
+
 /*#region Header Codes*/
 
-header {}
+header {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.13);
+
+    #header-contact{
+        width: 100%;
+        background-color: $gray;
+
+        .container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1.75rem 0;
+
+            ul{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                li{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-right: 2.5rem;
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+
+                    i{
+                        font-size: 2rem;
+                        color: $primary;
+                        margin-right: 1rem;
+                    }
+
+                    p{
+                        @extend %text;
+                        font-size: 1.35rem;
+                        font-weight: 800;
+                        margin-right: 0.5rem;
+                    }
+
+                    a{
+                        @extend %text;
+                        font-size: 1.35rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    #header-content{
+        position: relative;
+        width: 100%;
+        background-color: $primary;
+        border-top: 0.4rem solid $secondary;
+
+        #header-logo{
+            position: absolute;
+            top: -3rem; left: 0;
+            width: 35rem;
+            height: calc(100% + 3rem);
+            background-image: url(../img/logo-bg.png);
+            background-position: right top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1.75rem 0;
+            
+            #header-menu{
+                nav{
+                    ul{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        li{
+                            margin: 0 1.25rem;
+
+                            &:last-child{
+                                margin-right: 0;
+                            }
+
+                            a{
+                                @extend %text;
+                                color: $white;
+                                transition: color 0.3s ease;
+
+                                &:hover{
+                                    color: $secondary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /*#endregion*/
 
@@ -96,8 +250,55 @@ header {}
 
 main {
 
+    section#home{
+        position: relative;
+        height: 100vh;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+
+        .container{
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 6rem;
+
+            #home-content{
+                width: 50%;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0; right: 0;
+                    width: 75%;
+                    height: 100%;
+                    background-image: url(../img/home-overlay.svg);
+                    background-position: bottom left;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    z-index: -1;
+                }
+
+                h1{
+                    font-size: 7rem;
+                    font-weight: 900;
+                    color: $white;
+                    margin-bottom: 1.25rem;
+                }
+
+                p{
+                    @extend %text;
+                    color: $white;
+                }
+
+                a{
+                    @extend %button;
+                }
+            }
+        }
+    }
+
     section#about {
-        margin-bottom: 9rem;
+        padding-bottom: 21rem;
 
         .container {
             #about-title {
@@ -223,20 +424,7 @@ main {
                     }
 
                     a{
-                        display: inline-block;
-                        margin-top: 3rem;
-                        background-color: $secondary;
-                        padding: 2rem 5.5rem;
-                        font-size: 1.6rem;
-                        font-weight: 700;
-                        color: $white;
-                        border: 0.25rem solid $secondary;
-                        transition: background-color 0.3s ease;
-                        z-index: 2;
-
-                        &:hover{
-                            background-color: transparent;
-                        }
+                        @extend %button;
                     }
                 }
             }
@@ -287,7 +475,101 @@ main {
 
 /*#region Footer Codes*/
 
-footer {}
+footer {
+    width: 100%;
+    background-color: #001940;
+    
+    #footer-content{
+        width: 100%;
+        padding: 12rem 0;
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            
+            h6{
+                font-size: 2rem;
+                font-weight: 600;
+                color: $white;
+                margin-bottom: 3rem;
+            }
+
+            #footer-about{
+                width: 30%;
+                padding-right: 10%;
+
+                p{
+                    @extend %text;
+                    color: $white;
+                    margin-bottom: 2.5rem;
+                }
+
+                a{
+                    @extend %button;
+                }
+            }
+
+            #footer-contact{
+                width: 35%;
+                padding-right: 7.5%;
+
+                a{
+                    p{
+                        @extend %text;
+                        color: $white;
+                    }
+                }
+            }
+
+            #footer-project{
+                width: 35%;
+
+                img{
+                    max-width: 25rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #footer-copyright{
+        width: 100%;
+        padding: 1.75rem 0;
+        background-color: #00122F;
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            p{
+                @extend %text;
+                font-size: 1.35rem;
+                color: $white;
+            }
+
+            #copyright-responsive{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                span{
+                    @extend %text;
+                    color: $white;
+                    display: inline-block;
+                    margin-right: 2.5rem;
+                    font-size: 1.35rem;
+                }
+
+                i{
+                    margin-right: 1.5rem;
+                    font-size: 1.5rem;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
 
 /*#endregion*/
 
