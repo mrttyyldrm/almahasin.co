@@ -8,12 +8,12 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 11px;
   scroll-behavior: smooth;
 }
 
 .container {
-  width: 105rem;
+  width: 130rem;
   margin: 0 auto;
 }
 
@@ -58,6 +58,7 @@ main section#services .container #services-content #services-title .title-main h
 }
 main section#services .container #services-content #services-title .title-main h3, main section#about .container #about-title .title-main h3 {
   max-width: 50rem;
+  width: 100%;
   text-transform: uppercase;
   font-size: 4.2rem;
   font-weight: 900;
@@ -122,7 +123,6 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 100;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.13);
 }
@@ -170,22 +170,30 @@ header #header-content {
   background-color: #00235A;
   border-top: 0.4rem solid #FF5E14;
 }
-header #header-content #header-logo {
-  position: absolute;
-  top: -3rem;
-  left: 0;
-  width: 35rem;
-  height: calc(100% + 3rem);
-  background-image: url(../img/logo-bg.png);
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 header #header-content .container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 1.75rem 0;
+}
+header #header-content .container #header-logo {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  max-width: 35rem;
+  padding: 1.5rem 0;
+  width: 25%;
+  height: calc(100% + 3rem);
+  background-image: url(../img/logo-bg.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header #header-content .container #header-logo img {
+  height: 100%;
 }
 header #header-content .container #header-menu nav ul {
   display: flex;
@@ -205,9 +213,19 @@ header #header-content .container #header-menu nav ul li a {
 header #header-content .container #header-menu nav ul li a:hover {
   color: #FF5E14;
 }
+header #header-content .container #header-bar {
+  display: none;
+}
+header #header-content .container #header-bar i {
+  font-size: 2.2rem;
+  color: #FFF;
+}
 
 /*#endregion*/
 /*#region Main Codes*/
+main {
+  overflow: hidden;
+}
 main section#home {
   position: relative;
   height: 100vh;
@@ -222,6 +240,7 @@ main section#home .container {
 }
 main section#home .container #home-content {
   width: 50%;
+  min-width: 35rem;
 }
 main section#home .container #home-content::before {
   content: "";
@@ -292,7 +311,8 @@ main section#services::before {
   background-size: cover;
   z-index: 0;
 }
-main section#services .container #services-content #services-title .title-main h2, main section#services .container #services-content #services-title .title-main h3 {
+main section#services .container #services-content #services-title .title-main h2,
+main section#services .container #services-content #services-title .title-main h3 {
   color: #FFF;
   z-index: 2;
 }
@@ -435,4 +455,363 @@ footer #footer-copyright .container #copyright-responsive i {
 
 /*#endregion*/
 /*#region Responsive Codes*/
+@media screen and (max-width: 1790px) {
+  html {
+    font-size: 10.75px;
+  }
+}
+@media screen and (max-width: 1740px) {
+  html {
+    font-size: 10.5px;
+  }
+  .container {
+    width: 120rem;
+  }
+}
+@media screen and (max-width: 1690px) {
+  html {
+    font-size: 11.25px;
+  }
+}
+@media screen and (max-width: 1640px) {
+  html {
+    font-size: 11px;
+  }
+  .container {
+    width: 115rem;
+  }
+}
+@media screen and (max-width: 1590px) {
+  html {
+    font-size: 10.75px;
+  }
+}
+@media screen and (max-width: 1540px) {
+  html {
+    font-size: 10.5px;
+  }
+  .container {
+    width: 110rem;
+  }
+}
+@media screen and (max-width: 1490px) {
+  html {
+    font-size: 10.25px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: 10px;
+  }
+  .container {
+    width: 105rem;
+  }
+}
+@media screen and (max-width: 1290px) {
+  html {
+    font-size: 9.8px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  html {
+    font-size: 9.6px;
+  }
+}
+@media screen and (max-width: 1190px) {
+  html {
+    font-size: 9.4px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  html {
+    font-size: 9.2px;
+  }
+}
+@media screen and (max-width: 1090px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 9px;
+  }
+  .container {
+    width: 90%;
+  }
+  main section#about .container #about-content ul li {
+    width: calc(33.33% - 1.5rem);
+  }
+  main section#services::before {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 974px) {
+  html {
+    font-size: 8.8px;
+  }
+}
+@media screen and (max-width: 924px) {
+  html {
+    font-size: 8.6px;
+  }
+  main section#services::before {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 874px) {
+  html {
+    font-size: 8.4px;
+  }
+}
+@media screen and (max-width: 824px) {
+  html {
+    font-size: 8.2px;
+  }
+  main section#services::before {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+  header #header-contact .container ul li p {
+    display: none;
+  }
+  header #header-contact .container ul li a {
+    font-weight: 700;
+  }
+  header #header-content .container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  header #header-content .container #header-logo {
+    position: static;
+    background-image: none;
+    width: initial;
+    padding: 0;
+  }
+  header #header-content .container #header-logo img {
+    max-width: 3.5rem;
+  }
+  header #header-content .container #header-menu {
+    order: 1;
+    width: 100%;
+    display: none;
+    margin-top: 3rem;
+  }
+  header #header-content .container #header-menu nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  header #header-content .container #header-menu nav ul li {
+    margin: 0 0 1.25rem 0;
+    text-align: right;
+  }
+  header #header-content .container #header-menu nav ul li:last-child {
+    margin-bottom: 0;
+  }
+  header #header-content .container #header-bar {
+    order: 0;
+    display: block;
+  }
+  main section#home .container #home-content::before {
+    width: 85%;
+  }
+  main section#about .container #about-content ul {
+    flex-wrap: wrap;
+  }
+  main section#about .container #about-content ul li {
+    width: calc(50% - 1.5rem);
+    margin-bottom: 2.5rem;
+  }
+  main section#about .container #about-content ul li:last-child {
+    margin-bottom: 0;
+  }
+  main section#services::before {
+    width: 100%;
+  }
+  main section#partners .container #partners-content ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main section#partners .container #partners-content ul li {
+    margin: 0 2rem 2rem 2rem;
+    width: calc(33.33% - 4rem);
+  }
+  footer #footer-content .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer #footer-content .container h6 {
+    text-align: center;
+  }
+  footer #footer-content .container #footer-about,
+footer #footer-content .container #footer-contact,
+footer #footer-content .container #footer-project {
+    width: 50%;
+    padding-right: 0;
+    margin-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer #footer-content .container #footer-about p,
+footer #footer-content .container #footer-contact p,
+footer #footer-content .container #footer-project p {
+    text-align: center;
+  }
+  footer #footer-content .container #footer-about p {
+    margin-bottom: 0;
+  }
+  footer #footer-content .container #footer-project {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 718px) {
+  html {
+    font-size: 8.75px;
+  }
+  main section#home .container #home-content::before {
+    width: 90%;
+  }
+  main section#services::before {
+    width: 110%;
+  }
+}
+@media screen and (max-width: 668px) {
+  html {
+    font-size: 8.5px;
+  }
+  main section#home .container #home-content::before {
+    width: 100%;
+  }
+  main section#services::before {
+    width: 120%;
+  }
+}
+@media screen and (max-width: 618px) {
+  html {
+    font-size: 8.25px;
+  }
+  main section#home .container #home-content::before {
+    width: 100%;
+  }
+  main section#services::before {
+    width: 125%;
+  }
+}
+@media screen and (max-width: 568px) {
+  html {
+    font-size: 8px;
+  }
+  main section#home .container #home-content::before {
+    width: 105%;
+  }
+  main section#services::before {
+    width: 130%;
+  }
+}
+@media screen and (max-width: 518px) {
+  html {
+    font-size: 7.75px;
+  }
+  main section#home .container #home-content::before {
+    width: 110%;
+  }
+  main section#services::before {
+    width: 135%;
+  }
+}
+@media screen and (max-width: 468px) {
+  html {
+    font-size: 10px;
+  }
+  main section#home .container {
+    justify-content: flex-start;
+  }
+  main section#home .container #home-content {
+    width: 100%;
+  }
+  main section#home .container #home-content::before {
+    width: 180%;
+  }
+  main section#about .container #about-title {
+    flex-direction: column;
+  }
+  main section#about .container #about-title .title-main {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  main section#about .container #about-title hr {
+    display: none;
+  }
+  main section#about .container #about-content ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main section#about .container #about-content ul li {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  main section#about .container #about-content ul li:last-child {
+    margin-bottom: 0;
+  }
+  main section#services::before {
+    width: 160%;
+  }
+  main section#partners .container #partners-content ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main section#partners .container #partners-content ul li {
+    width: calc(50% - 4rem);
+    margin: 0 2rem 2rem 2rem;
+  }
+  footer #footer-content {
+    padding: 8rem 0;
+  }
+  footer #footer-content .container #footer-about,
+footer #footer-content .container #footer-contact,
+footer #footer-content .container #footer-project {
+    width: 100%;
+    padding-right: 0;
+  }
+  footer #footer-copyright .container {
+    flex-wrap: wrap;
+  }
+  footer #footer-copyright .container p {
+    width: 100%;
+    text-align: center;
+  }
+  footer #footer-copyright .container #copyright-responsive {
+    display: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 9.75px;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 9.5px;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 9.25px;
+  }
+}
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 325px) {
+  html {
+    font-size: 8.75px;
+  }
+}
 /*#endregion*//*# sourceMappingURL=style.css.map */

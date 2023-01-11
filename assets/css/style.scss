@@ -13,12 +13,12 @@ $gray: #DDD;
 }
 
 html {
-    font-size: 10px;
+    font-size: 11px;
     scroll-behavior: smooth;
 }
 
 .container {
-    width: 105rem;
+    width: 130rem;
     margin: 0 auto;
 }
 
@@ -36,7 +36,7 @@ section {
     line-height: 1.7;
 }
 
-%h4{
+%h4 {
     font-size: 2.2rem;
     font-weight: 800;
     color: $primary;
@@ -64,6 +64,7 @@ section {
 
         h3 {
             max-width: 50rem;
+            width: 100%;
             text-transform: uppercase;
             font-size: 4.2rem;
             font-weight: 900;
@@ -87,7 +88,7 @@ section {
     }
 }
 
-%button{
+%button {
     display: inline-block;
     margin-top: 3rem;
     background-color: $secondary;
@@ -100,29 +101,30 @@ section {
     transition: background-color 0.3s ease;
     z-index: 2;
 
-    &.secondary{
+    &.secondary {
         background-color: transparent;
         border-color: $white;
 
-        &:hover{
+        &:hover {
             background-color: $secondary;
             border-color: $secondary;
         }
     }
 
-    &:hover{
+    &:hover {
         background-color: transparent;
     }
 }
 
-body{
-    &::before{
+body {
+    &::before {
         content: "";
         display: block;
         width: 100%;
         height: 100vh;
         position: fixed;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         z-index: -1;
         background-image: url(../img/home-bg.png);
         background-repeat: no-repeat;
@@ -136,50 +138,50 @@ body{
 header {
     width: 100%;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 100;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.13);
 
-    #header-contact{
+    #header-contact {
         width: 100%;
         background-color: $gray;
 
-        .container{
+        .container {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             padding: 1.75rem 0;
 
-            ul{
+            ul {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
 
-                li{
+                li {
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
                     margin-right: 2.5rem;
 
-                    &:last-child{
+                    &:last-child {
                         margin-right: 0;
                     }
 
-                    i{
+                    i {
                         font-size: 2rem;
                         color: $primary;
                         margin-right: 1rem;
                     }
 
-                    p{
+                    p {
                         @extend %text;
                         font-size: 1.35rem;
                         font-weight: 800;
                         margin-right: 0.5rem;
                     }
 
-                    a{
+                    a {
                         @extend %text;
                         font-size: 1.35rem;
                         font-weight: 500;
@@ -189,54 +191,73 @@ header {
         }
     }
 
-    #header-content{
+    #header-content {
         position: relative;
         width: 100%;
         background-color: $primary;
         border-top: 0.4rem solid $secondary;
 
-        #header-logo{
-            position: absolute;
-            top: -3rem; left: 0;
-            width: 35rem;
-            height: calc(100% + 3rem);
-            background-image: url(../img/logo-bg.png);
-            background-position: right top;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .container{
+        .container {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             padding: 1.75rem 0;
-            
-            #header-menu{
-                nav{
-                    ul{
+
+            #header-logo {
+                position: absolute;
+                top: -3rem;
+                left: 0;
+                max-width: 35rem;
+                padding: 1.5rem 0;
+                width: 25%;
+                height: calc(100% + 3rem);
+                background-image: url(../img/logo-bg.png);
+                background-position: right top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            #header-menu {
+                nav {
+                    ul {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
 
-                        li{
+                        li {
                             margin: 0 1.25rem;
 
-                            &:last-child{
+                            &:last-child {
                                 margin-right: 0;
                             }
 
-                            a{
+                            a {
                                 @extend %text;
                                 color: $white;
                                 transition: color 0.3s ease;
 
-                                &:hover{
+                                &:hover {
                                     color: $secondary;
                                 }
                             }
                         }
                     }
+                }
+            }
+
+            #header-bar {
+                display: none;
+
+                i {
+                    font-size: 2.2rem;
+                    color: $white;
                 }
             }
         }
@@ -245,30 +266,32 @@ header {
 
 /*#endregion*/
 
-
 /*#region Main Codes*/
 
 main {
+    overflow: hidden;
 
-    section#home{
+    section#home {
         position: relative;
         height: 100vh;
         background-color: transparent;
         display: flex;
         align-items: center;
 
-        .container{
+        .container {
             display: flex;
             justify-content: flex-end;
             padding-top: 6rem;
 
-            #home-content{
+            #home-content {
                 width: 50%;
+                min-width: 35rem;
 
-                &::before{
+                &::before {
                     content: "";
                     position: absolute;
-                    top: 0; right: 0;
+                    top: 0;
+                    right: 0;
                     width: 75%;
                     height: 100%;
                     background-image: url(../img/home-overlay.svg);
@@ -278,19 +301,19 @@ main {
                     z-index: -1;
                 }
 
-                h1{
+                h1 {
                     font-size: 7rem;
                     font-weight: 900;
                     color: $white;
                     margin-bottom: 1.25rem;
                 }
 
-                p{
+                p {
                     @extend %text;
                     color: $white;
                 }
 
-                a{
+                a {
                     @extend %button;
                 }
             }
@@ -346,15 +369,16 @@ main {
         }
     }
 
-    section#services{
+    section#services {
         position: relative;
         overflow: visible;
         background-color: $gray;
 
-        &::before{
+        &::before {
             content: "";
             position: absolute;
-            top: -8rem; left: 0;
+            top: -8rem;
+            left: 0;
             width: 75%;
             height: calc(100% + 8rem);
             background-image: url(../img/service-bg.png);
@@ -364,28 +388,30 @@ main {
             z-index: 0;
         }
 
-        .container{
+        .container {
 
-            #services-content{
+            #services-content {
 
-                #services-title{
+                #services-title {
                     @extend %title;
 
-                    .title-main{
-                        h2,h3{
+                    .title-main {
+
+                        h2,
+                        h3 {
                             color: #FFF;
                             z-index: 2;
                         }
                     }
-                }   
-                
-                #services-cards{
+                }
+
+                #services-cards {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
 
-                    .service{
+                    .service {
                         width: 100%;
                         display: flex;
                         justify-content: flex-start;
@@ -393,7 +419,7 @@ main {
                         margin-bottom: 3rem;
                         z-index: 2;
 
-                        .service-icon{
+                        .service-icon {
                             width: 10rem;
                             height: 10rem;
                             display: flex;
@@ -401,21 +427,21 @@ main {
                             align-items: center;
                             margin-right: 2.5%;
 
-                            img{
+                            img {
                                 width: 5rem;
                                 height: 5rem;
                             }
                         }
 
-                        .service-text{
-                            
-                            h4{
+                        .service-text {
+
+                            h4 {
                                 @extend %h4;
                                 text-transform: uppercase;
                                 color: $white;
                             }
 
-                            p{
+                            p {
                                 @extend %text;
                                 max-width: 35rem;
                                 color: $white;
@@ -423,7 +449,7 @@ main {
                         }
                     }
 
-                    a{
+                    a {
                         @extend %button;
                     }
                 }
@@ -472,59 +498,58 @@ main {
 
 /*#endregion*/
 
-
 /*#region Footer Codes*/
 
 footer {
     width: 100%;
     background-color: #001940;
-    
-    #footer-content{
+
+    #footer-content {
         width: 100%;
         padding: 12rem 0;
 
-        .container{
+        .container {
             display: flex;
             justify-content: space-between;
-            
-            h6{
+
+            h6 {
                 font-size: 2rem;
                 font-weight: 600;
                 color: $white;
                 margin-bottom: 3rem;
             }
 
-            #footer-about{
+            #footer-about {
                 width: 30%;
                 padding-right: 10%;
 
-                p{
+                p {
                     @extend %text;
                     color: $white;
                     margin-bottom: 2.5rem;
                 }
 
-                a{
+                a {
                     @extend %button;
                 }
             }
 
-            #footer-contact{
+            #footer-contact {
                 width: 35%;
                 padding-right: 7.5%;
 
-                a{
-                    p{
+                a {
+                    p {
                         @extend %text;
                         color: $white;
                     }
                 }
             }
 
-            #footer-project{
+            #footer-project {
                 width: 35%;
 
-                img{
+                img {
                     max-width: 25rem;
                     width: 100%;
                 }
@@ -532,28 +557,28 @@ footer {
         }
     }
 
-    #footer-copyright{
+    #footer-copyright {
         width: 100%;
         padding: 1.75rem 0;
         background-color: #00122F;
 
-        .container{
+        .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-    
-            p{
+
+            p {
                 @extend %text;
                 font-size: 1.35rem;
                 color: $white;
             }
 
-            #copyright-responsive{
+            #copyright-responsive {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
 
-                span{
+                span {
                     @extend %text;
                     color: $white;
                     display: inline-block;
@@ -561,7 +586,7 @@ footer {
                     font-size: 1.35rem;
                 }
 
-                i{
+                i {
                     margin-right: 1.5rem;
                     font-size: 1.5rem;
                     color: $white;
@@ -573,8 +598,587 @@ footer {
 
 /*#endregion*/
 
-
 /*#region Responsive Codes*/
 
+@media screen and (max-width: 1790px) {
+    html {
+        font-size: 10.75px;
+    }
+}
+
+@media screen and (max-width: 1740px) {
+    html {
+        font-size: 10.5px;
+    }
+
+    .container {
+        width: 120rem;
+    }
+}
+
+@media screen and (max-width: 1690px) {
+    html {
+        font-size: 11.25px;
+    }
+}
+
+@media screen and (max-width: 1640px) {
+    html {
+        font-size: 11px;
+    }
+
+    .container {
+        width: 115rem;
+    }
+}
+
+@media screen and (max-width: 1590px) {
+    html {
+        font-size: 10.75px;
+    }
+}
+
+@media screen and (max-width: 1540px) {
+    html {
+        font-size: 10.5px;
+    }
+
+    .container {
+        width: 110rem;
+    }
+}
+
+@media screen and (max-width: 1490px) {
+    html {
+        font-size: 10.25px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    html {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 105rem;
+    }
+}
+
+@media screen and (max-width: 1290px) {
+    html {
+        font-size: 9.8px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    html {
+        font-size: 9.6px;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    html {
+        font-size: 9.4px;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    html {
+        font-size: 9.2px;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 9px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    main {
+        section#about {
+            .container {
+                #about-content {
+                    ul {
+                        li {
+                            width: calc(33.33% - 1.5rem);
+                        }
+                    }
+                }
+            }
+        }
+
+        section#services {
+            &::before {
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 974px) {
+    html {
+        font-size: 8.8px;
+    }
+}
+
+@media screen and (max-width: 924px) {
+    html {
+        font-size: 8.6px;
+    }
+
+    main {
+        section#services {
+            &::before {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 874px) {
+    html {
+        font-size: 8.4px;
+    }
+}
+
+@media screen and (max-width: 824px) {
+    html {
+        font-size: 8.2px;
+    }
+
+    main {
+        section#services {
+            &::before {
+                width: 95%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 9px;
+    }
+    
+    header {
+        #header-contact {
+            .container {
+                ul {
+                    li {
+                        p {
+                            display: none;
+                        }
+
+                        a {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        #header-content {
+            .container {
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                #header-logo {
+                    position: static;
+                    background-image: none;
+                    width: initial;
+                    padding: 0;
+
+                    img {
+                        max-width: 3.5rem;
+                    }
+                }
+
+                #header-menu {
+                    order: 1;
+                    width: 100%;
+                    display: none;
+                    margin-top: 3rem;
+
+                    nav {
+                        ul {
+                            flex-direction: column;
+                            align-items: flex-end;
+
+                            li {
+                                margin: 0 0 1.25rem 0;
+                                text-align: right;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #header-bar {
+                    order: 0;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    main {
+        section#home {
+            .container {
+                #home-content {
+                    &::before {
+                        width: 85%;
+                    }
+                }
+            }
+        }
+
+        section#about {
+            .container {
+                #about-content {
+                    ul {
+                        flex-wrap: wrap;
+
+                        li {
+                            width: calc(50% - 1.5rem);
+                            margin-bottom: 2.5rem;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        section#services {
+            &::before {
+                width: 100%;
+            }
+        }
+
+        section#partners {
+            .container {
+                #partners-content {
+                    ul {
+                        flex-wrap: wrap;
+                        justify-content: center;
+
+                        li {
+                            margin: 0 2rem 2rem 2rem;
+                            width: calc(33.33% - 4rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        #footer-content {
+            .container {
+                flex-direction: column;
+                align-items: center;
+
+                h6 {
+                    text-align: center;
+                }
+
+                #footer-about,
+                #footer-contact,
+                #footer-project {
+                    width: 50%;
+                    padding-right: 0;
+                    margin-bottom: 8rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                #footer-about {
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+
+                #footer-project {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 718px) {
+    html {
+        font-size: 8.75px;
+    }
+
+    main {
+        section#home {
+            .container {
+                #home-content {
+                    &::before {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        section#services {
+            &::before {
+                width: 110%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 668px) {
+    html {
+        font-size: 8.5px;
+    }
+
+    main {
+        section#home {
+            .container {
+                #home-content {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        section#services {
+            &::before {
+                width: 120%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 618px) {
+    html {
+        font-size: 8.25px;
+    }
+
+    main {
+        section#home {
+            .container {
+                #home-content {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        section#services {
+            &::before {
+                width: 125%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 568px) {
+    html {
+        font-size: 8px;
+    }
+
+    main {
+        section#home {
+            .container {
+                #home-content {
+                    &::before {
+                        width: 105%;
+                    }
+                }
+            }
+        }
+        section#services {
+            &::before {
+                width: 130%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 518px) {
+    html {
+        font-size: 7.75px;
+    }
+
+    main {
+        section#home {
+            .container {
+                #home-content {
+                    &::before {
+                        width: 110%;
+                    }
+                }
+            }
+        }
+        section#services {
+            &::before {
+                width: 135%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 468px) {
+    html {
+        font-size: 10px;
+    }
+
+    main {
+        section#home {
+            .container {
+                justify-content: flex-start;
+
+                #home-content {
+                    width: 100%;
+
+                    &::before {
+                        width: 180%;
+                    }
+                }
+            }
+        }
+
+        section#about {
+            .container {
+                #about-title {
+                    flex-direction: column;
+
+                    .title-main {
+                        width: 100%;
+                        margin-bottom: 1rem;
+                    }
+
+                    hr {
+                        display: none;
+                    }
+                }
+
+                #about-content {
+                    ul {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        li {
+                            width: 100%;
+                            margin-bottom: 4rem;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        section#services {
+            &::before {
+                width: 160%;
+            }
+        }
+
+        section#partners {
+            .container {
+                #partners-content {
+                    ul {
+                        flex-wrap: wrap;
+                        justify-content: center;
+
+                        li {
+                            width: calc(50% - 4rem);
+                            margin: 0 2rem 2rem 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        #footer-content {
+            padding: 8rem 0;
+
+            .container {
+
+                #footer-about,
+                #footer-contact,
+                #footer-project {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+        }
+
+        #footer-copyright {
+            .container {
+                flex-wrap: wrap;
+
+                p {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                #copyright-responsive {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 9.75px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 9.5px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 9.25px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    html {
+        font-size: 8.75px;
+    }
+}
 
 /*#endregion*/
